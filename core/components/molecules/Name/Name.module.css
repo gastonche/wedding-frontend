@@ -3,7 +3,7 @@
 }
 
 .root > :first-child {
-  text-align: right;
+  text-align: center;
   width: fit-content;
   padding: 3rem 0 0;
 }

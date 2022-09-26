@@ -29,3 +29,9 @@ a {
   --background: #F2ECE4;
   --highlight: #591E08;
 }
+
+@media only screen and (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+}
