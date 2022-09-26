@@ -1,0 +1,19 @@
+.primary {
+  color: var(--primary);
+}
+
+.secondary {
+  color: var(--secondary);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.background {
+  color: var(--background);
+}
+
+.highlight {
+  color: var(--highlight);
+}

@@ -1,0 +1,18 @@
+.title {
+  font-weight: bold;
+  font-family: 'Tiro Telugu', serif;
+  line-height: 1;
+  margin: 0;
+}
+
+.title + .title {
+  margin-top: 2rem;
+}
+
+.regular {
+  font-size: 4rem;
+}
+
+.large {
+  font-size: 8rem;
+}

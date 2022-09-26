@@ -1,0 +1,13 @@
+.root {
+  padding: 4rem 0;
+}
+
+.root > :first-child {
+  text-align: right;
+  width: fit-content;
+  padding: 3rem 0 0;
+}
+
+.root > :last-child {
+  text-align: right;
+}

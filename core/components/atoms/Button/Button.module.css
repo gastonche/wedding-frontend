@@ -1,0 +1,15 @@
+.btn {
+  padding: 1rem 2.5rem;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s linear;
+}
+
+.primary {
+  background-color: var(--accent);
+  color: var(--secondary);
+}
+
+.btn:hover {
+  transform: scale(1.1);
+}
