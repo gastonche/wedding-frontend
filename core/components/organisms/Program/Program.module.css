@@ -1,0 +1,17 @@
+.program__date{
+    margin-top: 200px;
+}
+
+.program__dateText{
+
+}
+
+@media screen and (max-width: 425px){
+    .program__dateText{
+        text-align: center;
+    }
+    .h1{
+        align-items: center;
+        font-size: 5rem;
+    }
+}

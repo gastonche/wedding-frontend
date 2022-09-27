@@ -1,0 +1,22 @@
+.banner{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 100px;
+    margin-left: 200px;
+    gap: 10rem;
+}
+
+@media  screen and (max-width: 425px){
+    .banner{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+        gap: 3rem;
+    }
+
+}
+.banner__image{
+    display: flex;
+}

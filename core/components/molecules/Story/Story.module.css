@@ -1,0 +1,23 @@
+.story{
+    display: flex;
+    align-items: center;
+    margin-top: 200px;
+    gap: 15rem;
+}
+
+.story__text{
+    display: flex;
+}
+
+.story__column2{
+    margin-top: 50px;
+}
+
+@media screen and (max-width: 425px){
+    .story{
+        flex-wrap: wrap;
+        margin-top: 150px;
+        gap: 2rem;
+        margin-bottom: 150px;
+    }
+}

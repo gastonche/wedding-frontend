@@ -1,0 +1,19 @@
+.gallery {
+    display: flex;
+    gap: 0.7rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.gallery__column {
+    display: flex;
+    gap: 0.7rem;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 425px){
+    .gallery{
+        flex-wrap: wrap;
+    }
+}

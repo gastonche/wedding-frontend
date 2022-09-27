@@ -1,0 +1,25 @@
+.timeline__program{
+    display: flex;
+    gap: 5rem;
+    justify-content: left;
+    margin-top: 300px;
+    margin-left: 250px;
+}
+
+@media screen and (max-width: 425px) {
+    .timeline__program{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-left: 0;
+        margin-top: 100px;
+    }
+    .timeline__button{
+        margin-top: 50px;
+        text-align: center;
+    }
+}
+
+.timeline__button{
+    margin-left: 250px;
+}
