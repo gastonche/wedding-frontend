@@ -7,7 +7,7 @@ function Program() {
   return (
     <>
       <div className={programStyle.program__date}>
-        <Title>24.06.2021</Title>
+        <Title className={programStyle.program__title}>24.06.2021</Title>
         <p className={programStyle.program__dateText}>
           Lorem ipsum dolor sit amet consectetur adipisicing<br /> elit. Quibusdam
           excepturi neque ad fugit quisquam<br /> consequuntur vero labore amet magni.

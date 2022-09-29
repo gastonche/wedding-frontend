@@ -6,10 +6,12 @@ export default function Title({
   children,
   variant = "regular",
   color = "primary",
+  className
 }) {
   return (
     <h1
       className={classNames({
+        [className]: true,
         [styles.title]: true,
         [styles[variant]]: true,
         [colors[color]]: true,
