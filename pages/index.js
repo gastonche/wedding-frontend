@@ -16,9 +16,7 @@ const Person = ({
 }) => {
   const [count, setCount] = useState(1);
   function submit() {
-    fetch(`/api/hello?index=${index}&attended=${count}`)
-      .then((res) => res.json())
-      .then(onSubmit);
+    onSubmit({count, index});
   }
   return (
     <div className={`${style.card} ${id == ID ? style.active : ""} ${attended >= 1? style.attended: ''}`}>
@@ -51,9 +49,19 @@ const Person = ({
     </div>
   );
 };
+
+const loadData = () => {
+  if(typeof window === "undefined") {
+    return data;
+  }
+  const a = localStorage.getItem("people");
+  return a? JSON.parse(a): data;
+}
+
 const SearchBox = () => {
   const [term, setTerm] = useState("");
-  const [people, setPeople] = useState(data);
+  const [people, setPeople] = useState(loadData());
+  console.log(people)
   const {
     query: { id },
   } = useRouter();
@@ -62,6 +70,13 @@ const SearchBox = () => {
     .map((attendee, index) => ({ ...attendee, index }))
     .filter(({ Name }) => Name.toLowerCase().includes(term.toLowerCase()))
     .sort((a, b) => (!id ? 1 : a.id == id ? -1 : b.id == id ? 1 : -1));
+
+  function submit({count, index}) {
+    let p = JSON.parse(JSON.stringify(people));
+    p[index].attended = count;
+    setPeople(p);
+    localStorage.setItem("people", JSON.stringify(p));
+  }
 
   return (
     <div className={style.container}>
@@ -80,7 +95,7 @@ const SearchBox = () => {
             key={`${attendee.Name}-${attendee.id}`}
             {...attendee}
             ID={id}
-            onSubmit={setPeople}
+            onSubmit={submit}
           />
         ))}
       </div>
