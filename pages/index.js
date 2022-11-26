@@ -9,7 +9,7 @@ const Person = ({
   Table,
   Group,
   attended,
-  invitees,
+  invitees = 1,
   ID,
   index,
   onSubmit,
@@ -53,15 +53,28 @@ const Person = ({
 
 const loadData = () => {
   if(typeof window === "undefined") {
-    return data;
+    return [];
   }
   const a = localStorage.getItem("people");
-  return a? JSON.parse(a): data;
+  return a? JSON.parse(a): [];
+}
+
+
+const mergeData = () => {
+  const a = loadData();
+  const b = [...data];
+
+  a.forEach((a, i) => {
+    console.log()
+    b[i] = a;
+  });
+  return b;
 }
 
 const SearchBox = () => {
   const [term, setTerm] = useState("");
-  const [people, setPeople] = useState(loadData());
+  const [people, setPeople] = useState(mergeData());
+  console.log(people);
   const {
     query: { id },
   } = useRouter();
