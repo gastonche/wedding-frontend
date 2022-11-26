@@ -17,6 +17,7 @@ const Person = ({
   const [count, setCount] = useState(1);
   function submit() {
     onSubmit({count, index});
+    fetch(`/api/hello?index=${index}&attended=${count}`)
   }
   return (
     <div className={`${style.card} ${id == ID ? style.active : ""} ${attended >= 1? style.attended: ''}`}>
@@ -61,7 +62,6 @@ const loadData = () => {
 const SearchBox = () => {
   const [term, setTerm] = useState("");
   const [people, setPeople] = useState(loadData());
-  console.log(people)
   const {
     query: { id },
   } = useRouter();
