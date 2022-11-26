@@ -10,9 +10,5 @@ export default function handler(req, res) {
     fetch(
       `http://crocko.237sms.com/api/webhook/settag?phone=237${person.Phone}`
     )
-      .then(console.log)
-      .catch(console.error);
-  person.attended = req.query.attended || 1;
-  fs.writeFileSync("data/attendees.json", JSON.stringify(attendees, null, 4));
   res.status(200).json(attendees);
 }
