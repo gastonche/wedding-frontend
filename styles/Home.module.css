@@ -57,3 +57,32 @@
   align-items: center;
   justify-content: space-between;
 }
+
+.attendance {
+  display: flex;
+  gap: 10px;
+}
+
+.attendance input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  width: 55px;
+}
+
+.attendance button {
+  padding: 10px;
+  cursor: pointer;
+  background-color: aquamarine;
+  border: none;
+  transition: transform 0.3s linear;
+  border-radius: 5px;
+}
+
+.attendance button:hover {
+  transform: scale(1.1);
+}
+
+.attended {
+  background-color: plum;
+}

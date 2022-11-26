@@ -3,7 +3,13 @@ import { useState } from "react";
 import data from "../data/attendees.json";
 import style from "../styles/Home.module.css";
 
-const Person = ({ id, Name, Table, Group, attended, invitees, ID }) => {
+const Person = ({ id, Name, Table, Group, attended, invitees, ID, index }) => {
+  const [count, setCount] = useState(1);
+  function submit() {
+    fetch(`/api/hello?index=${index}&attended=${count}`).then(attendees => {
+      
+    });
+  }
   return (
     <div className={`${style.card} ${id == ID ? style.active : ""}`}>
       <p className={style.title}>{Name}</p>
@@ -27,7 +33,10 @@ const Person = ({ id, Name, Table, Group, attended, invitees, ID }) => {
             <span>{Group}</span>
           </div>
         </div>
-        <div>test</div>
+        <div className={style.attendance}>
+          <input value={count} onChange={e => setCount(e.target.value)} />
+          <button onClick={submit}>Mark Attended</button>
+        </div>
       </div>
     </div>
   );
@@ -54,8 +63,8 @@ const SearchBox = () => {
         onChange={(e) => setTerm(e.target.value)}
       />
       <div>
-        {attendees.map((attendee) => (
-          <Person key={`${attendee.Name}-${attendee.id}`} {...attendee} ID={id} />
+        {attendees.map((attendee, index) => (
+          <Person key={`${attendee.Name}-${attendee.id}`} {...attendee} ID={id} index={index} />
         ))}
       </div>
     </div>
